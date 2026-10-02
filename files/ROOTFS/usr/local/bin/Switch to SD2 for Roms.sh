@@ -88,8 +88,6 @@ then
   sed -i '/roms\//s//roms2\//g'  /home/ark/.config/retroarch32/retroarch.cfg
   sed -i '/roms\//s//roms2\//g'  /home/ark/.atari800.cfg
   sed -i '/roms\//s//roms2\//g'  /home/ark/.config/retroarch/config/Atari800/retroarch_5200.cfg
-  sed -i '/roms\//s//roms2\//g'  /home/ark/.config/retroarch/config/Atari800/retroarch_A800.cfg
-  sed -i '/roms\//s//roms2\//g'  /home/ark/.config/retroarch/config/Atari800/retroarch_XEGS.cfg
   sed -i '/roms\//s//roms2\//g'  /home/ark/.config/mupen64plus/mupen64plus.cfg
   sed -i '/roms\//s//roms2\//g'  /home/ark/.config/duckstation/settings.ini
   sed -i '/roms\/bios/s//roms2\/bios/g' /opt/amiberry/conf/amiberry.conf
