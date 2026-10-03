@@ -38,7 +38,6 @@ status=$?
   sudo sed -i '/roms2\//s//roms\//g' /usr/local/bin/saturn.sh
   sudo sed -i '/roms2\//s//roms\//g' /usr/local/bin/atomiswave.sh
   sudo sed -i '/roms2\//s//roms\//g' /usr/local/bin/naomi.sh
-  sudo sed -i '/roms2\//s//roms\//g' /usr/local/bin/singe.sh
   sudo sed -i '/roms2\//s//roms\//g' /usr/local/bin/easyrpg.sh
   sudo sed -i '/roms2\//s//roms\//g' /usr/local/bin/ecwolf.sh
   sudo sed -i '/roms2\//s//roms\//g' /usr/local/bin/drastic.sh

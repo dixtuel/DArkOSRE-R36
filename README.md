@@ -15,6 +15,8 @@
   [dixtuel/darkos-updates](https://github.com/dixtuel/darkos-updates). The
   update repository documents which payloads are present and their validation
   limits.
+- The vanilla-to-R36 adaptation scope and remaining device-validation gates
+  are recorded in [`resources/vanilla-adaptations-20261003.md`](resources/vanilla-adaptations-20261003.md).
 - The original firmware release notes are archived in
   [`resources/upstream-release-history.md`](resources/upstream-release-history.md).
   Those entries point to the original author's externally hosted images; this
