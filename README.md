@@ -35,6 +35,13 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/dixtuel/dArkOSRE-R36?style=flat-square)](https://github.com/dixtuel/dArkOSRE-R36/releases)
 [![GitHub stars](https://img.shields.io/github/stars/dixtuel/dArkOSRE-R36?style=flat-square)](https://github.com/dixtuel/dArkOSRE-R36/stargazers)
 
+## Current adaptation status — 2026-10-03
+
+- Runtime R3 was installed and reboot-tested on an R36S: preserved ROM2 paths and controls, working modern PSP controls/audio/existing save, and active447MiB zram.
+- The new ES source candidate has physically verified dual scraper selection, indicator settings and tool icons; authenticated scraper requests remain unverified, so the original production frontend is retained.
+- The public preparation recipe now includes the required licensed icon font.
+- [Exact scope and remaining gates](resources/validation/runtime-r3-and-es-20261003.md). Firmware-image assembly uses a separate copy of the verified official base; no flashable replacement image is declared by this source update.
+
 ## News
 - **Latest upstream firmware release:** [dArkOSRE-R36 (03082026)](https://github.com/southoz/dArkOSRE-R36/releases/tag/dArkOSRE-R36%2803082026%29). This fork currently contains the full source tree and its R36S adaptation commits; it does not claim to have produced or validated a replacement firmware image.
 - Upcoming device support:
