@@ -100,3 +100,7 @@ directories and the device's existing system libraries:
 The candidate DSperate AArch64 binary also resolves its SDL2 dependency on
 this device. Loader checks do not test a PortMaster game, video/audio output,
 or gameplay; the OTA record states that limit explicitly.
+
+## Superseding historical ARMhf candidate closure
+
+See `trixie-armhf-dependencies/README.md`, package manifest, SHA256SUMS and licensing records. 26 pinned package inputs solve without upgrades/removals on both official-base and live-device statuses; temporary-library native loader checks now pass. These inputs are not yet integrated into the active image/OTA installation flow; game and clean-base ELF validation remain pending. Earlier dependency-gap findings explain the old incomplete overlay and are retained as historical evidence.
