@@ -9,3 +9,8 @@ This is the template owner under `/opt`; it does not overwrite existing `/roms/p
 Do not copy vanilla RG351MP controls wholesale: R36 has additional Select hotkeys that are preserved here. Do not transplant the multi-version launcher from `596c142b375d32d706b36a11c65c6c8e1c3cdc35` until the installed R36 launcher and 2021 paths are available. `ForceMaxEmulatedFPS = 30` remains unchanged pending that launcher/profile comparison; upstream removed this cap for modern standalone but retained it for 2021.
 
 State: source adaptation only. No physical PSP title/control/save tests or live settings change; no OTA publication. Matching templates are staged under the updater's `drafts/next-ota-ppsspp-defaults/`, outside its raw release feed. Before packaging, inspect both ROM-card flows and the template-copy behavior; apply only `/opt` files with rollback, preserving numeric metadata and all user profiles.
+
+
+## Superseding device-backed follow-up
+
+See `device-backed-runtime-20261003.md`. Actual launcher/default owners and device service limits are now read back. The modern seed cap, SDL default and separate 2021 profile adaptation supersede earlier pending/unchanged-cap statements. Existing live user settings remain unchanged; physical title/menu/reboot tests are still pending.
