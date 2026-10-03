@@ -15,6 +15,10 @@
   [dixtuel/darkos-updates](https://github.com/dixtuel/darkos-updates). The
   update repository documents which payloads are present and their validation
   limits.
+- The original firmware release notes are archived in
+  [`resources/upstream-release-history.md`](resources/upstream-release-history.md).
+  Those entries point to the original author's externally hosted images; this
+  fork has not rebuilt or republished those firmware files.
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/dixtuel/dArkOSRE-R36?style=flat-square)](https://github.com/dixtuel/dArkOSRE-R36/releases)
 [![GitHub stars](https://img.shields.io/github/stars/dixtuel/dArkOSRE-R36?style=flat-square)](https://github.com/dixtuel/dArkOSRE-R36/stargazers)
