@@ -43,6 +43,24 @@ result_volume_sha=$(sha256sum "$volume" | cut -d' ' -f1)
 [[ "$result_volume_sha" == "$r36_volume_sha" ]] || { echo 'R36 VolumeControl hash check failed' >&2; exit 1; }
 printf 'R36 override applied; source base=%s, VolumeControl SHA-256=%s\n' "$actual" "$result_volume_sha"
 
+# The maintained R36 Colorful v2 themes put networkIcon on batteryIndicator.
+# FCAMOD's inherited applyTheme() already consumes PATH properties; allow that
+# specific element to accept the path while leaving theme files untouched.
+theme_data="$src/es-core/src/ThemeData.cpp"
+theme_patch="$patch_root/patches/0003-battery-indicator-network-icon.patch"
+if git -C "$src" apply --reverse --check "$theme_patch" 2>/dev/null; then
+  echo 'batteryIndicator networkIcon theme property already present'
+else
+  git -C "$src" apply --check "$theme_patch"
+  git -C "$src" apply "$theme_patch"
+fi
+battery_properties=$(awk '/\{ "batteryIndicator", \{/{capture=1} capture {print} capture && /\} \},/ {exit}' "$theme_data")
+grep -Fq '{ "networkIcon", PATH }' <<< "$battery_properties" || {
+  echo 'batteryIndicator networkIcon PATH property is missing after patch' >&2
+  exit 1
+}
+printf 'R36 batteryIndicator networkIcon PATH property is present\n'
+
 # Standards-compliant dependent-base type declarations; two lines only.
 portability_patch="$patch_root/patches/0002-dependent-entry-type-portability.patch"
 if git -C "$src" apply --reverse --check "$portability_patch" 2>/dev/null; then
