@@ -1,18 +1,26 @@
-# dArkOSRE R36
+# dArkOSRE R36 — maintained fork
 
 <p align="center">
 <img width="224" height="350" alt="image" src="https://github.com/user-attachments/assets/d0334598-9296-466f-8e6e-4ca2e15daf70" />
 </p>
 
-- **Customised dArkOS build** optimised for R36S devices and clones. 
-- **Guaranteed Virus and Malware free** - Scanned with 7th Feb 2026 ClamAV Daily update.
-- **Issues are off for a few days to allow me to catch up**
+- **Customized dArkOS build** for supported R36S devices and clones. See the
+  compatibility table below and the installation guide before flashing.
+- This is the public source fork maintained at
+  [dixtuel/dArkOSRE-R36](https://github.com/dixtuel/dArkOSRE-R36). The original
+  project is [southoz/dArkOSRE-R36](https://github.com/southoz/dArkOSRE-R36).
+- Source code in `main` is not a firmware image. Use the release page and follow
+  its device-specific installation instructions; do not flash a source checkout.
+- Online update files are maintained separately in
+  [dixtuel/darkos-updates](https://github.com/dixtuel/darkos-updates). The
+  update repository documents which payloads are present and their validation
+  limits.
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/southoz/dArkOS-G80CA-RE?style=flat-square)](https://github.com/southoz/dArkOS-G80CA-RE/releases)
-[![GitHub stars](https://img.shields.io/github/stars/southoz/dArkOS-G80CA-RE?style=flat-square)](https://github.com/southoz/dArkOS-G80CA-RE/stargazers)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/dixtuel/dArkOSRE-R36?style=flat-square)](https://github.com/dixtuel/dArkOSRE-R36/releases)
+[![GitHub stars](https://img.shields.io/github/stars/dixtuel/dArkOSRE-R36?style=flat-square)](https://github.com/dixtuel/dArkOSRE-R36/stargazers)
 
 ## News
-- **dArkOSRE-R36 03082026** [Release](https://github.com/southoz/dArkOSRE-R36/releases/tag/dArkOSRE-R36(03082026)) 
+- **Latest upstream firmware release:** [dArkOSRE-R36 (03082026)](https://github.com/southoz/dArkOSRE-R36/releases/tag/dArkOSRE-R36%2803082026%29). This fork currently contains the full source tree and its R36S adaptation commits; it does not claim to have produced or validated a replacement firmware image.
 - Upcoming device support:
   - R36H - Framework is in place to support different control schemes, trying to decide on buttons.
   - R36 Plus - Batch 2551 is working in the latest Beta; other batches will also work with battery capacity reporting issues.
@@ -85,7 +93,7 @@
 - [Kodi Widevine arm64 support](https://github.com/southoz/dArkOSRE-R36/issues/152)
 
 ### If your Rk3326-based R36S, R36S Clone or Soy Sauce system is not listed
-Raise an [issue](https://github.com/southoz/dArkOS-G80CA-RE/issues) with the motherboard ID and attach your original SD card .dtb files and boot.ini in a zip file
+Raise an [issue in this maintained fork](https://github.com/dixtuel/dArkOSRE-R36/issues/new) with the motherboard ID and attach your original SD card `.dtb` files and `boot.ini` in a ZIP file. Remove personal data before attaching files.
 
 ## ✅ Features
 
@@ -107,5 +115,5 @@ Raise an [issue](https://github.com/southoz/dArkOS-G80CA-RE/issues) with the mot
 - [dArkOS main project](https://github.com/christianhaitian/dArkOS) – huge thanks to christianhaitian!
 - Community discussions: [r/R36S](https://www.reddit.com/r/R36S/) and [RetroHandhelds.gg](https://discord.com/channels/741895796315914271/1452057823927341196) R36S and clones discord channel.
 
-Feel free to report issues or suggest improvements in the [Issues tab](https://github.com/southoz/dArkOS-G80CA-RE/issues).  
+Feel free to report issues or suggest improvements in the [Issues tab of this fork](https://github.com/dixtuel/dArkOSRE-R36/issues/new).
 Happy retro gaming! 🎮
