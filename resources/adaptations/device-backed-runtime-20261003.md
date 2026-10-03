@@ -31,3 +31,11 @@ Systemd semantics: https://manpages.debian.org/trixie/systemd/systemd.service.5.
 ## Scope/publication
 
 The updater draft stages 15 targets with hashes/modes/link targets. It is not a dated OTA or live raw-feed step. Physical game/menu/reboot/import/swap tests and owner/mode/active-card rollback are pending. Keep this batch out of public installation until those gates pass. The complete unrelated Debian upgrade and firmware image work remain paused/deferred; no large build input was recreated.
+
+## PSP Minis and SD2 correction (post-batch diff review, 2026-10-03)
+
+The live and source ES system entries invoke ppsspp.sh for both `psp` and `pspminis`. The first adapted guard accepted only `psp`; this unpublished regression was caught by checking every caller and corrected to accept both under either `/roms` or `/roms2`. Both systems intentionally share the selected card's `psp/ppsspp` or `psp/ppsspp-2021` configuration tree, matching R36 behavior. An unmounted SD2 is now rejected before any profile creation/link change. Neither SD-switcher's slash-delimited replacement matches this mount guard or the dynamic profile paths.
+
+Host mocks passed both cards × both systems × modern/2021 and libretro branches, filenames with spaces, shared profile selection, first-2021 save/config migration, reset with SD2 mounted/unmounted and preservation of real home config directories. No emulator binaries, controls, sound or real games were exercised by these mocks. Source/draft equality, all 15 manifest hashes/modes/link targets and changed shell syntax were checked. These do not replace physical gameplay, boot or OTA validation.
+
+Zram replacement is narrowed to the recorded generated unit SHA256 `237d0729fbc1c8ee2a7dfd50740e304e020a8d1d33e21bd2d65e5b2ef3a724d3`; custom units require separate review. The draft has no installer enforcing this yet and must not be published as a ready OTA.
