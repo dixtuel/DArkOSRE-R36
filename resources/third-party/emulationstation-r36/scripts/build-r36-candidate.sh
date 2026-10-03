@@ -22,6 +22,8 @@ cmake_args=(
   -DGLES=ON
   -DGL=OFF
   -DGAMESDB_APIKEY=
+  # Define the provider gate without embedding ScreenScraper app credentials.
+  -DSCREENSCRAPER_DEV_LOGIN=
   -DCMAKE_BUILD_TYPE=Release
   -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 )
