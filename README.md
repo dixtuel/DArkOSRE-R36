@@ -17,6 +17,16 @@
   limits.
 - The vanilla-to-R36 adaptation scope and remaining device-validation gates
   are recorded in [`resources/vanilla-adaptations-20261003.md`](resources/vanilla-adaptations-20261003.md).
+- The source overlay now carries the RK3326 emulator/core payloads published
+  in OTA `10032026`, plus optional DSperate v3.0.0. Its GPL source and exact
+  upstream binary provenance are under
+  [`resources/third-party/DSperate-v3.0.0`](resources/third-party/DSperate-v3.0.0);
+  the ROM-card-aware launcher keeps DSperate saves and states on the selected
+  `/roms` or `/roms2` card. See
+  [`resources/emulator-artifact-provenance.md`](resources/emulator-artifact-provenance.md).
+- PortMaster's legacy FFmpeg compatibility libraries are included for both
+  AArch64 and ARMhf with their Debian packages, hashes, and copyright notices
+  in [`resources/third-party/portmaster-legacy-compat`](resources/third-party/portmaster-legacy-compat).
 - The original firmware release notes are archived in
   [`resources/upstream-release-history.md`](resources/upstream-release-history.md).
   Those entries point to the original author's externally hosted images; this
