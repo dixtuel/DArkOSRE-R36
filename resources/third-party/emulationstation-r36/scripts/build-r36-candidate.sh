@@ -23,12 +23,25 @@ cmake_args=(
   -DGL=OFF
   -DGAMESDB_APIKEY=
   -DCMAKE_BUILD_TYPE=Release
+  -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 )
 if [[ -n "${CMAKE_TOOLCHAIN_FILE:-}" ]]; then
   cmake_args+=("-DCMAKE_TOOLCHAIN_FILE=$CMAKE_TOOLCHAIN_FILE")
 fi
 if [[ -n "${CMAKE_SYSROOT:-}" ]]; then
   cmake_args+=("-DCMAKE_SYSROOT=$CMAKE_SYSROOT")
+fi
+# The R36 fixed-function GLES and EGL exports are in its native libEGL.so.
+# Explicit linkage prevents accidentally selecting Debian GLVND in a sysroot.
+if [[ -n "${R36_EGL_LINK_LIBRARY:-}" ]]; then
+  [[ -f "$R36_EGL_LINK_LIBRARY" && "${R36_EGL_LINK_LIBRARY##*/}" == libEGL.so ]] || {
+    echo 'R36_EGL_LINK_LIBRARY must be the reviewed native libEGL.so link-time alias' >&2
+    exit 1
+  }
+  cmake_args+=("-DOPENGLES_gl_LIBRARY=$R36_EGL_LINK_LIBRARY")
+fi
+if [[ -n "${R36_GLES_INCLUDE_DIR:-}" ]]; then
+  cmake_args+=("-DOPENGLES_INCLUDE_DIR=$R36_GLES_INCLUDE_DIR")
 fi
 if [[ -n "${CC:-}" ]]; then
   cmake_args+=("-DCMAKE_C_COMPILER=$CC")
@@ -58,6 +71,15 @@ if command -v readelf >/dev/null 2>&1; then
   machine=$(readelf -h "$binary" | awk -F: '/Machine:/ { sub(/^[[:space:]]+/, "", $2); print $2 }')
   if [[ "$machine" != AArch64 ]]; then
     echo "Build output has unexpected ELF machine: $machine" >&2
+    exit 1
+  fi
+  dependencies=$(readelf -d "$binary")
+  grep -Fq 'Shared library: [libEGL.so]' <<< "$dependencies" || {
+    echo 'Candidate does not link the native R36 libEGL.so; review graphics inputs' >&2
+    exit 1
+  }
+  if grep -Eq 'libEGL\.so\.1|libGLESv1_CM|libOpenGL|\(RPATH\)|\(RUNPATH\)' <<< "$dependencies"; then
+    echo 'Candidate has an unexpected graphics dispatch or runtime search path' >&2
     exit 1
   fi
 fi

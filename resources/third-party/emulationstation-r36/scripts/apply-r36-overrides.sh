@@ -42,3 +42,12 @@ fi
 result_volume_sha=$(sha256sum "$volume" | cut -d' ' -f1)
 [[ "$result_volume_sha" == "$r36_volume_sha" ]] || { echo 'R36 VolumeControl hash check failed' >&2; exit 1; }
 printf 'R36 override applied; source base=%s, VolumeControl SHA-256=%s\n' "$actual" "$result_volume_sha"
+
+# Standards-compliant dependent-base type declarations; two lines only.
+portability_patch="$patch_root/patches/0002-dependent-entry-type-portability.patch"
+if git -C "$src" apply --reverse --check "$portability_patch" 2>/dev/null; then
+  echo 'Dependent-type portability patch already present'
+else
+  git -C "$src" apply --check "$portability_patch"
+  git -C "$src" apply "$portability_patch"
+fi
