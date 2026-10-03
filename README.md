@@ -35,6 +35,10 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/dixtuel/dArkOSRE-R36?style=flat-square)](https://github.com/dixtuel/dArkOSRE-R36/releases)
 [![GitHub stars](https://img.shields.io/github/stars/dixtuel/dArkOSRE-R36?style=flat-square)](https://github.com/dixtuel/dArkOSRE-R36/stargazers)
 
+## Prepare complete offline overlay inputs
+
+The full ScummVM executable is stored losslessly in normal Git as a checked gzip asset because GitHub denies new LFS uploads to this public fork. Before assembling the overlay, run `python3 resources/third-party/scummvm-2026.3.0/materialize.py`; no network download is needed. [Storage and checksum details](resources/third-party/scummvm-2026.3.0/README.md).
+
 ## Current adaptation status — 2026-10-03
 
 - Runtime R3 was installed and reboot-tested on an R36S: preserved ROM2 paths and controls, working modern PSP controls/audio/existing save, and active447MiB zram.
