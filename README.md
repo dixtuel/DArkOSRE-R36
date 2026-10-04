@@ -59,6 +59,15 @@ The full ScummVM executable is stored losslessly in normal Git as a checked gzip
 
 ## Supported Systems  
 
+The table below is retained from the upstream source project. Its tester names
+and completion labels describe upstream testing, not validation of a new image
+assembled by this fork. The current image assembly preserves the verified
+official `03082026` BOOT partition, kernel, initrd and device trees. Newer BOOT
+files present in this source tree are not automatically copied into that image.
+Fresh-card boot and panel compatibility of a fork image require separate
+physical validation; OTA testing on an existing installation does not establish
+those results.
+
 | Motherboard ID (Variant/Panel) | Type | Status | Tester |
 |----------------|----------------|---------------|---------------|
 | [HL-R36H-V20 2024-05-18](https://github.com/southoz/dArkOS-G80CA-RE/wiki/Firmware-Installation/#genuine-r36s) | r36s | :warning: [Beta Testing](https://github.com/southoz/dArkOSRE-R36/wiki/Beta-Testing) | :white_check_mark: southoz  |
