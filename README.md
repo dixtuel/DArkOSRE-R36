@@ -23,7 +23,8 @@
   upstream binary provenance are under
   [`resources/third-party/DSperate-v3.0.0`](resources/third-party/DSperate-v3.0.0);
   the ROM-card-aware launcher keeps DSperate saves and states on the selected
-  `/roms` or `/roms2` card. See
+  `/roms` or `/roms2` card. OTA R5 completes the vanilla RK3326 defaults and
+  controller-operated restore tool. See
   [`resources/emulator-artifact-provenance.md`](resources/emulator-artifact-provenance.md).
 - PortMaster's legacy FFmpeg compatibility libraries are included for both
   AArch64 and ARMhf with their Debian packages, hashes, and copyright notices
@@ -42,11 +43,11 @@ The full ScummVM executable is stored losslessly in normal Git as a checked gzip
 
 ## Current adaptation status — 2026-10-04
 
-- Runtime R4 is the current device update stage. R3's R36S checks covered ROM2 paths, PSP controls/audio/existing save, and active zram; R4 repaired the SD2 launcher and its SD1/SD2 routing paths were verified on the physical device.
-- The existing [firmware release](https://github.com/dixtuel/dArkOSRE-R36/releases/tag/r36-updater-migration-20261004) now links a static-checked R4 image candidate. It has not passed physical clean-card boot/firstboot testing; use a separate test card and follow the release's warnings and checksums.
+- Runtime R5 is installed on the physical R36S. Its active `/roms2` DSperate config now has the missing RK3326 profile and hotkey keys while retaining the user's dominant-screen layout and adaptive `frameskip=1` preference. The settings-reset tool and rollback archive are installed and verified. Full DS gameplay/hotkey testing remains separate.
+- The existing [firmware release](https://github.com/dixtuel/dArkOSRE-R36/releases/tag/r36-updater-migration-20261004) still links the earlier static-checked R4 image candidate and now carries the R5-capable updater migration helper. That image has not passed physical clean-card boot/firstboot testing; the R5 changes arrive to existing R4 installs through the [R5 OTA](https://github.com/dixtuel/darkos-updates/releases/tag/ota-10032026-r5).
 - The new ES source candidate has physically verified dual scraper selection, indicator settings and tool icons; authenticated scraper requests remain unverified, so the original production frontend is retained.
 - The public preparation recipe now includes the required licensed icon font.
-- [R3/ES scope](resources/validation/runtime-r3-and-es-20261003.md) and [R4 SD routing validation](resources/validation/r4-sd1-rom-routing-20261004.md). The image remains an explicitly unverified static candidate until clean-card physical boot/firstboot testing passes.
+- [R3/ES scope](resources/validation/runtime-r3-and-es-20261003.md), [R4 SD routing validation](resources/validation/r4-sd1-rom-routing-20261004.md), and the [R5 DSperate/suspend live review](resources/validation/r5-dsperate-suspend-live-review-20261004.md). The image remains an explicitly unverified static candidate until clean-card physical boot/firstboot testing passes.
 
 ## Supported Systems  
 
