@@ -8,11 +8,11 @@ The device entrypoint then fetches `dArkOSUpdate.sh` from `dixtuel/darkos-update
 
 1. Confirms the `03082026` base image's existing legacy markers (`12242025`, `12312025`, `01082026`, `01162026`, `01302026`). Missing markers stop the updater; old upstream packages are not replayed.
 2. Base OTA `10032026`.
-3. R1, compatibility libraries, R2, R3, then R4.
+3. R1, compatibility libraries, R2, R3, R4, then R5.
 
 Installers that reboot stop the current run normally. After the device boots, run this tool or the regular EmulationStation **Update** action again to continue with the next missing stage. It does not skip directly to the newest version and does not install a later stage when prerequisites/markers are missing or inconsistent.
 
-The helper accepts only `.VERSION` values `03082026` and `10032026` through `10032026-r4`. Older or unknown versions stop without changing files; they need a separately prepared, backed-up full firmware-image upgrade first. Do not treat the image candidate in the same release as hardware-tested: the updater helper is the safer in-place route, but OTA stages still require stable power and the release notes' stated preconditions.
+The helper accepts `.VERSION` values `03082026` and `10032026` through `10032026-r5`. Older or unknown versions stop without changing files; they need a separately prepared, backed-up full firmware-image upgrade first. Do not treat the image candidate in the same release as hardware-tested: the updater helper is the safer in-place route, but OTA stages still require stable power and the release notes' stated preconditions.
 
 The source entrypoint SHA, updater-stage mapping, and per-release package checksums are pinned in the script/updater repository. The helper should be attached as a GitHub release asset; it is intentionally not part of the Google Drive image archive.
 

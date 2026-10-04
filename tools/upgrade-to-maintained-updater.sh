@@ -35,7 +35,7 @@ DEVICE_COMPAT="$(tr -d '\0' < /proc/device-tree/compatible 2>/dev/null || true)"
 
 CURRENT_VERSION="$(tr -d '\r\n' < "$VERSION_FILE")"
 case "$CURRENT_VERSION" in
-	03082026|10032026|10032026-r1|10032026-r2|10032026-r3|10032026-r4) ;;
+	03082026|10032026|10032026-r1|10032026-r2|10032026-r3|10032026-r4|10032026-r5) ;;
 	*) fail "Installed version '$CURRENT_VERSION' is outside the supported OTA path. Install the official latest dArkOSRE-R36 image (03082026) first. This tool will not flash an image or repartition either card." ;;
 esac
 
@@ -147,5 +147,5 @@ else
 	show_message "Updater source already matches the maintained dArkOSRE-R36 fork."
 fi
 
-show_message "Starting the maintained sequential updater. The base OTA and R1 each restart the device; after each restart, run this tool or the normal Update menu again. After R1, compatibility, R2, R3, and R4 run in order in one update session, and the device restarts after R4 succeeds."
+show_message "Starting the maintained sequential updater. The base OTA and R1 each restart the device; after each restart, run this tool or the normal Update menu again. After R1, compatibility, R2, R3, R4, and R5 run in order in one update session, and the device restarts after R5 succeeds."
 exec "$UPDATE_ENTRY"
