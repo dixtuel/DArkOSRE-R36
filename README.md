@@ -40,12 +40,12 @@
 
 The full ScummVM executable is stored losslessly in normal Git as a checked gzip asset because GitHub denies new LFS uploads to this public fork. Before assembling the overlay, run `python3 resources/third-party/scummvm-2026.3.0/materialize.py`; no network download is needed. [Storage and checksum details](resources/third-party/scummvm-2026.3.0/README.md).
 
-## Current adaptation status — 2026-10-03
+## Current adaptation status — 2026-10-04
 
-- Runtime R3 was installed and reboot-tested on an R36S: preserved ROM2 paths and controls, working modern PSP controls/audio/existing save, and active447MiB zram.
+- Runtime R4 is the current device update stage. R3's R36S checks covered ROM2 paths, PSP controls/audio/existing save, and active zram; R4 repaired the SD2 launcher and its SD1/SD2 routing paths were verified on the physical device.
 - The new ES source candidate has physically verified dual scraper selection, indicator settings and tool icons; authenticated scraper requests remain unverified, so the original production frontend is retained.
 - The public preparation recipe now includes the required licensed icon font.
-- [Exact scope and remaining gates](resources/validation/runtime-r3-and-es-20261003.md). Firmware-image assembly uses a separate copy of the verified official base; no flashable replacement image is declared by this source update.
+- [R3/ES scope](resources/validation/runtime-r3-and-es-20261003.md) and [R4 SD routing validation](resources/validation/r4-sd1-rom-routing-20261004.md). The R4 firmware image remains a static candidate until clean-card physical boot/firstboot testing passes.
 
 ## Supported Systems  
 
