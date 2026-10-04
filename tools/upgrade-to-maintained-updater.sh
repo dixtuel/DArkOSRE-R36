@@ -147,5 +147,5 @@ else
 	show_message "Updater source already matches the maintained dArkOSRE-R36 fork."
 fi
 
-show_message "Starting the maintained sequential updater. Missing dated updates are applied in order. If an update reboots the device, return to EmulationStation and run this tool or the normal Update menu again to continue."
+show_message "Starting the maintained sequential updater. The base OTA and R1 each restart the device; after each restart, run this tool or the normal Update menu again. After R1, compatibility, R2, R3, and R4 run in order in one update session, and the device restarts after R4 succeeds."
 exec "$UPDATE_ENTRY"
