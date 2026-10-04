@@ -10,7 +10,8 @@
   [dixtuel/dArkOSRE-R36](https://github.com/dixtuel/dArkOSRE-R36). The original
   project is [southoz/dArkOSRE-R36](https://github.com/southoz/dArkOSRE-R36).
 - Source code in `main` is not a firmware image. Use the release page and follow
-  its device-specific installation instructions; do not flash a source checkout.
+  the [firmware installation guide](docs/Firmware-Installation.md); do not flash
+  a source checkout.
 - Online update files are maintained separately in
   [dixtuel/darkos-updates](https://github.com/dixtuel/darkos-updates). The
   update repository documents which payloads are present and their validation
@@ -45,17 +46,6 @@ The full ScummVM executable is stored losslessly in normal Git as a checked gzip
 - The new ES source candidate has physically verified dual scraper selection, indicator settings and tool icons; authenticated scraper requests remain unverified, so the original production frontend is retained.
 - The public preparation recipe now includes the required licensed icon font.
 - [Exact scope and remaining gates](resources/validation/runtime-r3-and-es-20261003.md). Firmware-image assembly uses a separate copy of the verified official base; no flashable replacement image is declared by this source update.
-
-## News
-- **Latest upstream firmware release:** [dArkOSRE-R36 (03082026)](https://github.com/southoz/dArkOSRE-R36/releases/tag/dArkOSRE-R36%2803082026%29). This fork currently contains the full source tree and its R36S adaptation commits; it does not claim to have produced or validated a replacement firmware image.
-- Upcoming device support:
-  - R36H - Framework is in place to support different control schemes, trying to decide on buttons.
-  - R36 Plus - Batch 2551 is working in the latest Beta; other batches will also work with battery capacity reporting issues.
-  - R36 Max - Working in latest Beta
-  - R36 Ultra - Working in the latest Beta
-  - V20 Clone - Working in latest Beta
-
-[![Donate PayPal](https://img.shields.io/badge/Donate-PayPal-009cde?logo=paypal&style=for-the-badge)](https://www.paypal.com/donate/?hosted_button_id=XSKKNR837CGE4)
 
 ## Supported Systems  
 
@@ -119,10 +109,6 @@ those results.
 - [ArkOS Dual SDCard Manager](https://github.com/Jason3x/Arkos-Dual-SD-Manager)
 
 **Support Jason** [Here](https://github.com/Jason3x/Arkos-Dual-SD-Manager#-a-coffee-to-support-the-project)
-
-### In development:
-- ogage update to support Jason3x's Pulse Audio implementation.
-- Supporting community requests for device support.
 
 ### User Wish List:
 - [Global Search Function](https://github.com/southoz/dArkOSRE-R36/issues/133)
